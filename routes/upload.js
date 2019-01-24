@@ -6,7 +6,7 @@ var uploadSetting = multer({dest:"../uploads"});
 
 router.post('/', uploadSetting.single('upload'), function(req, res){
 	var tmpPath = req.file.path;
-	var fileName = req.file.filename;
+	var fileName = req.file.filename+".jpg";
 	var newPath = "../public/images/"+fileName;
 
 	console.log(tmpPath + " : " + fileName + " : " + newPath);
